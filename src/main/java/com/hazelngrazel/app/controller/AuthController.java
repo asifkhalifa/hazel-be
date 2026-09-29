@@ -23,11 +23,6 @@ public class AuthController {
 	@Autowired
     AuthServiceI authServiceI;
 
-	@GetMapping("/health")
-		public ResponseEntity<String> health() {
-    return ResponseEntity.ok("UP");
-	}
-
     @PostMapping("/register")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> register(@RequestBody RegisterRequest request) {
